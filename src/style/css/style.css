@@ -264,3 +264,19 @@
 
     color: #486581;
 }
+
+.value-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 4px 4px 16px;
+    top: 128px;
+    left: 82px;
+    position: absolute;
+    width: 123px;
+    height: 32px;
+
+    background: #F0F4F8;
+    border-radius: 4px;
+}

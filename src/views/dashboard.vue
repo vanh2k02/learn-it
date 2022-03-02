@@ -12,21 +12,33 @@
       <div class="box">
         <input :class="checkClassInput" type="search" placeholder="検索してください" v-model="inputSearch"
                @input="showSelection()">
-
+        <a class="value-input" v-for="(name,index) in names" :key="index">
+          <div class="value">
+            {{ name }}
+          </div>
+          <a href="#" class="icon-delete" @click="deleteValue(index)"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </a>
         <div class="icon-search">
           <i class="fa fa-search icon" aria-hidden="true"></i>
         </div>
       </div>
-      <div :class="classSelection">
+      <div :class="classSelection" v-if="showOrHideSelection">
         <div :class="classChooseSearch" v-for="(searchResult,index) in searchElement" :key="index" v-if="index===0">
-          <div :class="classList" v-if="classList">
-            <a href="#" style="text-decoration: none;color: #486581;">{{ searchResult.name }}</a>
-          </div>
+          <a href="#" style="text-decoration: none;color: #486581;"
+             @click="chooseSelection(searchResult.name)">
+            <div :class="classList" v-if="classList">
+              {{ searchResult.name }}
+            </div>
+          </a>
         </div>
+
         <div class="" v-for="(searchResult,index) in searchElement" :key="index" v-if="index!==0">
-          <div :class="classList" v-if="classList">
-            <a href="#" style="text-decoration: none;color: #486581;">{{ searchResult.name }}</a>
-          </div>
+          <a href="#" style="text-decoration: none;color: #486581;"
+             @click="chooseSelection(searchResult.name)">
+            <div :class="classList" v-if="classList">
+              {{ searchResult.name }}
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -62,7 +74,9 @@ export default {
       classChooseSearch: '',
       classList: '',
       searchResults: [],
-      searchElement:[]
+      searchElement: [],
+      showOrHideSelection: '',
+      names: []
     }
   },
   created() {
@@ -75,16 +89,18 @@ export default {
   computed: {
     checkClassInput() {
       if (this.inputSearch.length === 0) {
+        this.showOrHideSelection = ''
         return 'box-search'
       }
+      this.showOrHideSelection = 'show'
       return 'click-search'
     },
 
   },
   methods: {
-    searchKeyWord(keyWord){
-      return this.searchResults.filter(dog => {
-        return dog.name.toLowerCase().indexOf(keyWord) !== -1 ;
+    searchKeyWord(keyWord) {
+      return this.searchResults.filter(key => {
+        return key.name.toLowerCase().indexOf(keyWord) !== -1;
       })
     },
     showSelection(val) {
@@ -92,8 +108,15 @@ export default {
       this.classChooseSearch = 'choose-search'
       this.classList = 'list'
       let keyWord = this.inputSearch.toLowerCase();
-      console.log(keyWord)
       this.searchElement = (keyWord) ? this.searchKeyWord(keyWord) : this.searchResults;
+    },
+    chooseSelection(val) {
+      console.log(val)
+      this.names.push(val)
+      this.inputSearch = ''
+    },
+    deleteValue(val) {
+      this.names.splice(val, 1)
     }
   }
 }
