@@ -1,0 +1,248 @@
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 924px;
+    height: 328px;
+    background: #FFFFFF;
+    border: 1px solid #DCDCDC;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.header-content {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translate(-50%);
+    width: 860px;
+    height: 48px;
+    background: #F8F8F8;
+    border-radius: 5px;
+}
+
+.text-header {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    width: 487px;
+    height: 40px;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #333333;
+}
+
+.search {
+    position: absolute;
+    left: 42px;
+    top: 100px;
+    width: 528px;
+    height: 64px;
+}
+
+.text-search {
+    position: absolute;
+    width: 411px;
+    height: 16px;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #333333;
+}
+
+.box {
+    position: absolute;
+    margin-top: 24px;
+    width: 528px;
+    height: 48px;
+}
+
+.box-search {
+    position: absolute;
+    padding: 0 35px;
+    width: 528px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #DCDCDC;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.icon-search {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+::placeholder {
+    position: absolute;
+    width: 128px;
+    height: 16px;
+    top: 12px;
+    left: 35px;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 100% */
+
+    display: flex;
+    align-items: center;
+
+    color: #BFBFBF;
+}
+
+.icon {
+    position: absolute;
+    left: 16.67%;
+    right: 25%;
+    top: 16.67%;
+    bottom: 25%;
+}
+
+#text-line {
+    position: absolute;
+    width: 334px;
+    height: 24px;
+    top: 189px;
+    left: 42px;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    display: flex;
+    align-items: center;
+
+    color: #666666;
+}
+
+#description {
+
+    position: absolute;
+    width: 334px;
+    height: 24px;
+    top: 221px;
+    left: 50px;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* or 157% */
+
+    display: flex;
+    align-items: center;
+
+    color: #333333;
+}
+
+#hr {
+    position: absolute;
+    width: 770px;
+    height: 0px;
+    top: 253px;
+    left: 42px;
+    /* Gray/Gray03 */
+
+    border: 1px solid #DCDCDC;
+}
+
+.add {
+    position: absolute;
+    width: 141px;
+    height: 19px;
+    top: 276px;
+    left: 79px;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* or 157% */
+
+
+    color: #666666;
+}
+
+#icon-add {
+    position: absolute;
+    top: 273px;
+    left: 42px;
+    width: 24px;
+    height: 24px;
+}
+
+.circle {
+
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #627D98;
+    border-radius: 50%;
+}
+
+.b {
+    position: absolute;
+    width: 13.5px;
+    height: 13.5px;
+    top: 5.25px;
+    left: 5.25px;
+}
+
+#a {
+    position: absolute;
+
+    width: 9.28px;
+    height: 2px;
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+#\| {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    height: 9.28px;
+    width: 2px;
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 25%;
+}
+.click-search{
+    position: absolute;
+    padding: 0 35px;
+    width: 528px;
+    height: 40px;
+    background: #F0F4F8;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.select-search{
+    position: absolute;
+    width: 528px;
+    height: 120px;
+    top: 162px;
+    left: 42px;
+    background: #F0F4F8;
+    border: 1px solid #DCDCDC;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
