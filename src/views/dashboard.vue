@@ -17,10 +17,15 @@
           <i class="fa fa-search icon" aria-hidden="true"></i>
         </div>
       </div>
-      <div :class="classSelection" >
-        <div :class="classChooseSearch" v-for="(searchResult,index) in searchResults" :key="index">
+      <div :class="classSelection">
+        <div :class="classChooseSearch" v-for="(searchResult,index) in searchElement" :key="index" v-if="index===0">
           <div :class="classList" v-if="classList">
-            {{ searchResult.name }}
+            <a href="#" style="text-decoration: none;color: #486581;">{{ searchResult.name }}</a>
+          </div>
+        </div>
+        <div class="" v-for="(searchResult,index) in searchElement" :key="index" v-if="index!==0">
+          <div :class="classList" v-if="classList">
+            <a href="#" style="text-decoration: none;color: #486581;">{{ searchResult.name }}</a>
           </div>
         </div>
       </div>
@@ -55,14 +60,16 @@ export default {
       classInput: '',
       classSelection: '',
       classChooseSearch: '',
-      classList:'',
-      searchResults: []
+      classList: '',
+      searchResults: [],
+      searchElement:[]
     }
   },
   created() {
     axios.get('https://api.instantwebtools.net/v1/airlines').then(res => {
       console.log(res.data[1].name)
       this.searchResults = res.data
+      this.searchElement = this.searchResults
     })
   },
   computed: {
@@ -75,10 +82,18 @@ export default {
 
   },
   methods: {
-    showSelection() {
+    searchKeyWord(keyWord){
+      return this.searchResults.filter(dog => {
+        return dog.name.toLowerCase().indexOf(keyWord) !== -1 ;
+      })
+    },
+    showSelection(val) {
       this.classSelection = 'select-search'
       this.classChooseSearch = 'choose-search'
       this.classList = 'list'
+      let keyWord = this.inputSearch.toLowerCase();
+      console.log(keyWord)
+      this.searchElement = (keyWord) ? this.searchKeyWord(keyWord) : this.searchResults;
     }
   }
 }
